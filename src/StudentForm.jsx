@@ -43,7 +43,7 @@ function StudentForm() {
     onSubmit: (values) => {
       console.log(values);
     }
-  })
+  });
   return (
     <div className="border border-2 border-danger-subtle p-3 m-3">
       <h1>Student Form Here:</h1>
