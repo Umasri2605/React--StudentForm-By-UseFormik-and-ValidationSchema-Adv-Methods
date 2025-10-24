@@ -3,6 +3,7 @@ import React from "react"
 import * as yup from 'yup';
 
 function StudentForm() {
+  const[submitdata,SetSubmitData]=React.useState([]);
   const studentForm = useFormik({
     initialValues: {
       FirstName: "",
@@ -41,7 +42,7 @@ function StudentForm() {
       }
     }),
     onSubmit: (values) => {
-      console.log("values",values);
+      console.log([...submitdata,values]);
     },
   })
   return (
