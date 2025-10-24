@@ -11,7 +11,7 @@ function StudentForm() {
       Password: "",
       Gender: "",
       Age: 0,
-      Techs: [],
+      Techs: "",
       Country: ""
     },
 
@@ -33,7 +33,7 @@ function StudentForm() {
         if(context.parent.Gender=="Male" && value==25){
           return true;
         }
-        if(context.parent.Gender=="Female" && value==23){
+        if(context.parent.Gender=="Female" && value==21){
           return true;
         }
         else{
@@ -42,7 +42,7 @@ function StudentForm() {
       }
     }),
     onSubmit: (values) => {
-      console.log([...submitdata,values]);
+      SetSubmitData([...submitdata,values]);
     },
   })
   return (
@@ -109,6 +109,32 @@ function StudentForm() {
         <button type="submit" className="btn bg-info-subtle border-info-subtle me-3">Show Data</button>
         <button onClick={() => (studentForm.resetForm())} type="reset" className="btn bg-warning-subtle border-warning-subtle">ClearForm</button>
       </form>
+      <table className="table table-border">
+             <thead>
+               <tr>
+                 <th>Firstname</th>
+                 <th>Lastname</th>
+                 <th>Password</th>
+                 <th>Gender</th>
+                 <th>Age</th>
+                 <th>Techs</th>
+                 <th>Country</th>
+               </tr>
+             </thead>
+              <tbody>
+                 {submitdata.map((data) => (
+                  <tr>
+                  <td>{data.FirstName}</td>
+                  <td>{data.LastName}</td>
+                  <td>{data.Password}</td>
+                  <td>{data.Gender}</td>
+                  <td>{data.Age}</td>
+                  <td>{data.Techs}</td> 
+                  <td>{data.Country}</td>
+                  </tr>
+              ))}
+            </tbody>
+          </table>
     </div>
   )
 }
