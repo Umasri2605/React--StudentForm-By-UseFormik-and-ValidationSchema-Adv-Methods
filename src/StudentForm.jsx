@@ -3,7 +3,6 @@ import React from "react"
 import * as yup from 'yup';
 
 function StudentForm() {
-  const[submitdata,SetSubmitData]=React.useState([]);
   const studentForm = useFormik({
     initialValues: {
       FirstName: "",
@@ -42,7 +41,7 @@ function StudentForm() {
       }
     }),
     onSubmit: (values) => {
-      SetSubmitData([...submitdata,values]);
+      console.log(values);
     }
   })
   return (
@@ -109,32 +108,6 @@ function StudentForm() {
         <button type="submit" className="btn bg-info-subtle border-info-subtle me-3">Show Data</button>
         <button onClick={() => (studentForm.resetForm())} type="reset" className="btn bg-warning-subtle border-warning-subtle">ClearForm</button>
       </form>
-      <table className="table table-border">
-             <thead>
-               <tr>
-                 <th>Firstname</th>
-                 <th>Lastname</th>
-                 <th>Password</th>
-                 <th>Gender</th>
-                 <th>Age</th>
-                 <th>Techs</th>
-                 <th>Country</th>
-               </tr>
-             </thead>
-              <tbody>
-                 {submitdata.map((data) => (
-                  <tr>
-                  <td>{data.FirstName}</td>
-                  <td>{data.LastName}</td>
-                  <td>{data.Password}</td>
-                  <td>{data.Gender}</td>
-                  <td>{data.Age}</td>
-                  <td>{data.Techs}</td> 
-                  <td>{data.Country}</td>
-                  </tr>
-              ))}
-            </tbody>
-          </table>
     </div>
   )
 }
