@@ -43,7 +43,7 @@ function StudentForm() {
     }),
     onSubmit: (values) => {
       SetSubmitData([...submitdata,values]);
-    },
+    }
   })
   return (
     <div className="border border-2 border-danger-subtle p-3 m-3">
