@@ -52,7 +52,7 @@ function StudentForm() {
       <form onSubmit={studentForm.handleSubmit}>
 
         <b>FirstName:</b>
-        <input type="text"{...studentForm.getFieldProps("FirstName")}/>
+        <input type="text"  name="FirstName" onChange={studentForm.handleChange} onBlur={studentForm.handleBlur}/>
         <>{studentForm.touched.FirstName && studentForm.errors.FirstName && (<div>FirstName is Mandatory</div>)}</>
         <>{studentForm.errors.FirstName && (<div>Must be 3 Characters</div>)}</>
         <br></br>
