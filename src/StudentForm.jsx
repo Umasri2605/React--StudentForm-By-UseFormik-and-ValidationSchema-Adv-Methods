@@ -111,4 +111,4 @@ function StudentForm() {
     </div>
   )
 }
-  export default StudentForm;
+  export default StudentForm
